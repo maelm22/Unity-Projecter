@@ -1,0 +1,33 @@
+﻿using UnityEngine;
+
+public class Boo : Agent
+{
+    public float minimumDistance = 6f;
+    public float minimumAngle = 80f;
+
+    private Transform mario;
+
+    private void Start()
+    {
+        mario = GameObject.Find("Mario").transform;
+    }
+
+    protected override void FiniteStateMachine()
+    {
+        MoveTo(mario);
+    }
+
+    private bool CanMarioSeeMe()
+    {
+        //Debug.Log(Vector3.Distance(transform.position, mario.position));
+        //Debug.Log(Vector3.Angle(transform.position, mario.forward));
+        if (Vector3.Distance(transform.position, mario.position) < minimumDistance &&
+            Vector3.Angle(transform.position, mario.forward) < minimumAngle)
+        {
+            Debug.Log("He sees me!");
+            return true;
+        }
+
+        return false;
+    }
+}
