@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FactorySpawner : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        InvokeRepeating("Spawn", 0, 5);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void Spawn()
+    {
+        GameObject go = PowerupFactory.CreateRandom();
+        //go.transform.position = transform.position + Random.insideUnitSphere * 5;
+    }
+}

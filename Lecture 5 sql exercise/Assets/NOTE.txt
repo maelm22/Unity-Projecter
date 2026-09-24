@@ -1,0 +1,1 @@
+The included libraries in Plugins are based on my current configuration (windows 64bits + Unity 2021.3.14f1), if you get errors follow the steps in the slides to get the correct libraries for your system
